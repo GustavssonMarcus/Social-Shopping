@@ -4,19 +4,14 @@
  */
 
 get_header(); ?>
+This is a page
 
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
-			Dett är en page
 			<?php
 			while ( have_posts() ) :
 				the_post();
-
-				do_action( 'storefront_page_before' );
-
-				get_template_part( 'content', 'page' );
-
-				do_action( 'storefront_page_after' );
+				the_content();
 
 			endwhile; // End of the loop.
 			?>

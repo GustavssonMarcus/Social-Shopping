@@ -14,7 +14,6 @@
     <p><?php bloginfo('description'); ?></p>
 </header>
 
-Dett är index
 
 <div id="content">
     <?php
