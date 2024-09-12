@@ -7,12 +7,13 @@
     <?php wp_head(); ?>
 </head>
 <body>
-	<?php get_header(); ?>
+    <div class="site-wrapper">
+        <?php get_header(); ?>
 
-<header id="header">
+<section id="header">
     <h1><?php bloginfo('name'); ?></h1>
     <p><?php bloginfo('description'); ?></p>
-</header>
+</section>
 
 
 <div id="content">
@@ -22,12 +23,12 @@
             the_title('<h2>', '</h2>');
             the_content();
         endwhile;
-    else :
-        echo '<p>No content found</p>';
+
     endif;
     ?>
 </div>
-
 <?php get_footer(); ?>
+</div>
+
 </body>
 </html>

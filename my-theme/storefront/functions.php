@@ -1,18 +1,8 @@
 <?php
-function mitt_tema_setup() {
-
-    add_theme_support('post-thumbnails');
-
-    register_nav_menus(array(
-        'primary' => __('Primary Menu', 'mitt-tema'),
-        'footer' => __('Footer Menu', 'mitt-tema'),
-    ));
-
-
-    add_theme_support('title-tag');
+function enqueue_theme_styles() {
+    wp_enqueue_style('main-styles', get_stylesheet_uri());
 }
-
-add_action('after_setup_theme', 'mitt_tema_setup');
+add_action('wp_enqueue_scripts', 'enqueue_theme_styles');
 ?>
 <?php
 add_action('form_on_page_template', 'mt_output_form', 10);
