@@ -4,7 +4,6 @@
  */
 
 get_header(); ?>
-This is a page
 
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
@@ -13,11 +12,11 @@ This is a page
 				the_post();
 				the_content();
 
-			endwhile; // End of the loop.
+			endwhile;
 			?>
 
-		</main><!-- #main -->
-	</div><!-- #primary -->
+		</main>
+	</div>
 
 <?php
 do_action( 'storefront_sidebar' );

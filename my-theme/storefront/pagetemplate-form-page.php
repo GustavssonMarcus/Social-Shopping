@@ -3,7 +3,6 @@
 Template Name: Form page
 */
 get_header(); ?>
-        This is a form page:
         <?php
 		if ( have_posts() ) :
 
@@ -40,5 +39,8 @@ get_header(); ?>
 			?>
 			<?php do_action('form_on_page_template'); ?>
 			<?php do_action('after_form_on_page_template'); ?>
+            <div>
+			    <a href="<?php echo(home_url("/fardiga-mixar/")); ?>">Se färdiga kollektioner</a>
+		    </div>
         <?php
 get_footer();

@@ -2,7 +2,7 @@
 get_header(); 
 ?>
 
-Archive collection
+
 <form method="GET">
 	<input type="date" name="startDate">
 	<input type="date" name="endDate">

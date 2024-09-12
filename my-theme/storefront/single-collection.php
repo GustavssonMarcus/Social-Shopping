@@ -7,7 +7,7 @@ get_header(); ?>
 
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
-	Detta är single
+
 		<?php
 		while ( have_posts() ) :
 			the_post();
@@ -31,7 +31,7 @@ get_header(); ?>
 			$product = wc_get_product($product_id);
 
 			?>
-			<div>
+			<div class="collection">
 				<a href="<?php echo get_permalink($product->get_id()); ?>">
 					<?php echo $product->get_name() ?>
 				</a>
