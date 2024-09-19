@@ -7,8 +7,11 @@ get_header(); ?>
 		if ( have_posts() ) :
 
 			while ( have_posts() ) :
-				the_post();
-				the_title();
+				the_post();?> 
+                <div class="title">    
+                    <h1 class="title-name"><?php the_title();?></h1>
+                </div>
+                <?php 
 				
 			endwhile;
 

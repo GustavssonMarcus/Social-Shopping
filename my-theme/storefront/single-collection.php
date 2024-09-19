@@ -5,14 +5,14 @@
 
 get_header(); ?>
 
-	<div id="primary" class="content-area">
-		<main id="main" class="site-main" role="main">
+	<div class="site-wrapper">
+		<div class="collection">
 
 		<?php
 		while ( have_posts() ) :
-			the_post();
-			the_title();
-			the_content();
+			the_post();?>
+			<h2><?php the_title();?></h2>
+			<?php the_content();
 
 		endwhile; 
 
@@ -25,24 +25,25 @@ get_header(); ?>
 		}
 
 		$products_ids = get_post_meta(get_the_ID(), 'products', true);
+		?>
 		
-
+		<?php
 		foreach($products_ids as $product_id) {
-			$product = wc_get_product($product_id);
+			$product = wc_get_product($product_id); ?>
 
-			?>
-			<div class="collection">
+			<p>
 				<a href="<?php echo get_permalink($product->get_id()); ?>">
 					<?php echo $product->get_name() ?>
 				</a>
-			</div>
+			</p>
 			<?php
 		}
 		?>
+		</div>
 		<form method="POST">
 			<input type="submit" value="Lägg till i varukorg" />
 		</form>
-		
+	</div>
 
 <?php
 do_action( 'storefront_sidebar' );

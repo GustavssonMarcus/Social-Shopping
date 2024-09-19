@@ -19,5 +19,4 @@ get_header(); ?>
 	</div>
 
 <?php
-do_action( 'storefront_sidebar' );
 get_footer();

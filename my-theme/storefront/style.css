@@ -6,18 +6,16 @@ Theme Name:   My theme
 body {
     margin: 0;
     padding: 0;
+    background-color: #000000;
 }
 .site-wrapper {
-    background-color: coral;
     height: 100vh; 
 }
 /* Header Styles */
 .site-header {
-    background-color: #f8f8f8;
-    padding: 20px 0;
-    border-bottom: 1px solid #e5e5e5;
+    padding: 10px 0;
+    background-color: #ffffff;
 }
-
 .container {
     width: 90%;
     max-width: 1200px;
@@ -26,45 +24,46 @@ body {
     justify-content: space-between;
     align-items: center;
 }
+/* Title styles */
+.title {
 
+}
+.title-name {
+    text-align: center;
+    color: #fff;
+}
 .logo a {
     text-decoration: none;
     font-size: 24px;
     font-weight: bold;
-    color: #333;
+    color: #353535;
 }
 
 /* Navigation Styling */
 #main-nav {
-    background-color: #333;
+    background-color: #ffffff;
     padding: 15px; 
     text-align: center; 
 }
-
 #main-nav ul {
     list-style: none; 
     margin: 0; 
     padding: 0;
 }
-
 #main-nav ul li {
     display: inline-block; 
     margin: 0 15px;
 }
-
 #main-nav ul li a {
     text-decoration: none; 
-    color: #fff;
+    color: #000000;
     font-size: 16px;
     font-weight: bold; 
     padding: 5px 10px; 
     transition: background-color 0.3s, color 0.3s; 
 }
-
 #main-nav ul li a:hover {
-    background-color: #0073aa; 
-    color: #fff; 
-    border-radius: 5px; 
+    border-bottom: 2px solid black;
 }
 
 .header-search {
@@ -75,9 +74,7 @@ body {
     background: #edeef0;
     border-radius: 30px;
     padding-left: 20px;
-
 }
-
 .header-search input[type="search"] {
     flex: 1;
     border: none;
@@ -86,7 +83,7 @@ body {
     padding: 10px;
 }
 .search-form button {
-    border-color: rgb(23, 77, 255);;
+    border-color: rgb(23, 77, 255);
     outline: none;
     padding: 16px 30px;
     border-radius: 30px;
@@ -112,10 +109,74 @@ body {
     margin: 0; 
     font-size: 14px;
 }
-
-/* Container styling for centering content */
 .footer {
     max-width: 1200px;
     margin: 0 auto; 
     padding: 0 20px;
+}
+/* Archive Styles */
+.archive {
+    display: flex;
+    justify-content: space-around;
+}
+.archive-container span {
+    color: white;
+}
+/* Collection styles */
+.collections {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    padding: 20px;
+    background-color: #000000;
+}
+.form-collection {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 600px;
+    padding: 20px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+.form-collection label {
+    font-size: 1.1em;
+    margin-bottom: 8px;
+    color: #333;
+}
+
+.form-collection input[type="text"],
+.form-collection textarea,
+.form-collection select {
+    font-size: 1em;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.form-collection input[type="submit"] {
+    padding: 10px 15px;
+    background: rgb(63, 107, 250);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 1.1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.form-collection input[type="submit"]:hover {
+    border-color: rgb(0, 58, 248);
+}
+
+@media (max-width: 768px) {
+    .form-collection {
+        padding: 10px;
+    }
 }

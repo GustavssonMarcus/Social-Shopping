@@ -18,7 +18,7 @@
         </div>
 
 		<nav id="main-nav">
-    <?php wp_nav_menu(array('theme_location' => 'primary')); ?>
+    <?php wp_nav_menu(array('theme_location' => 'main-styles')); ?>
 </nav>
 
         <div class="header-search">

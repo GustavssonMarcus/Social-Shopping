@@ -10,25 +10,25 @@
     <div class="site-wrapper">
         <?php get_header(); ?>
 
-<section id="header">
-    <h1><?php bloginfo('name'); ?></h1>
-    <p><?php bloginfo('description'); ?></p>
-</section>
+        <section id="header">
+            <h1><?php bloginfo('name'); ?></h1>
+            <p><?php bloginfo('description'); ?></p>
+        </section>
 
 
-<div id="content">
-    <?php
-    if (have_posts()) :
-        while (have_posts()) : the_post();
-            the_title('<h2>', '</h2>');
-            the_content();
-        endwhile;
+        <div id="content">
+            <?php
+            if (have_posts()) :
+                while (have_posts()) : the_post();
+                    the_title('<h2>', '</h2>');
+                    the_content();
+                endwhile;
 
-    endif;
-    ?>
-</div>
-<?php get_footer(); ?>
-</div>
+            endif;
+            ?>
+        </div>
+        <?php get_footer(); ?>
+    </div>
 
 </body>
 </html>
