@@ -8,7 +8,7 @@ add_action('wp_enqueue_scripts', 'enqueue_theme_styles');
 function mt_output_form() {    
     $products = wc_get_products(array()); ?>
 <div class="collections">
-    <form method="POST" class="form-collection">
+    <form method="POST" class="form-collection" onsubmit="dataLayer.push({event: 'createdCollection', products: [].slice.call(document.querySelector('select').selectedOptions).map(function(item) {return item.value}), user: <?php echo(get_current_user_id())?>});">
         <label for="title">Namnet på din kollektion:</label>
         <br>
         <input name="title" id="title" placeholder="Skriv din kollektions namn" />
