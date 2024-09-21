@@ -1,14 +1,23 @@
 <?php
 function enqueue_theme_styles() {
     wp_enqueue_style('main-styles', get_stylesheet_uri());
+    wp_enqueue_script(
+        'custom-script', 
+        get_template_directory_uri() . '/custom.js', 
+        array(), 
+        null, 
+        true 
+    );
 }
 add_action('wp_enqueue_scripts', 'enqueue_theme_styles');
 ?>
 <?php
 function mt_output_form() {    
-    $products = wc_get_products(array()); ?>
+    $products = wc_get_products(array());
+    ?>
+    
 <div class="collections">
-    <form method="POST" class="form-collection" onsubmit="dataLayer.push({event: 'createdCollection', products: [].slice.call(document.querySelector('select').selectedOptions).map(function(item) {return item.value}), user: <?php echo(get_current_user_id())?>});">
+    <form method="POST" class="form-collection">
         <label for="title">Namnet på din kollektion:</label>
         <br>
         <input name="title" id="title" placeholder="Skriv din kollektions namn" />
@@ -54,6 +63,7 @@ function mt_output_form() {
     <input type="submit">
 </div>
 <?php
+
 }
 add_action('form_on_page_template', 'mt_output_form');
 

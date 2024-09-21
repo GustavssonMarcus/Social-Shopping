@@ -6,7 +6,7 @@
 get_header(); ?>
 
 	<div class="site-wrapper">
-		<div class="collection">
+		<div class="product">
 
 		<?php
 		while ( have_posts() ) :
@@ -16,31 +16,35 @@ get_header(); ?>
 
 		endwhile; 
 
-		if($_SERVER['REQUEST_METHOD'] == 'POST') {
+		
+		if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 			
+			// Hämta och lägg till produkter i kundvagnen
 			$product_ids = get_post_meta(get_the_ID(), 'products', true);
 			foreach($product_ids as $product_id) {
-				WC()->cart->add_to_cart($product_id, 1, 0, array(), array('collection' => get_the_ID() ));
+				WC()->cart->add_to_cart($product_id, 1, 0, array(), array('collection' => get_the_ID()));
 			}
 		}
-
-		$products_ids = get_post_meta(get_the_ID(), 'products', true);
-		?>
 		
+		// Hämta produkter
+		$products_ids = get_post_meta(get_the_ID(), 'products', true);
+		
+		?>
 		<?php
-		foreach($products_ids as $product_id) {
-			$product = wc_get_product($product_id); ?>
-
+		// Loopa genom produkterna och skriv ut dem
+		foreach ($products_ids as $product_id) {
+			$product = wc_get_product($product_id);
+			?>
 			<p>
 				<a href="<?php echo get_permalink($product->get_id()); ?>">
-					<?php echo $product->get_name() ?>
+					<?php echo $product->get_name(); ?>
 				</a>
 			</p>
 			<?php
 		}
 		?>
 		</div>
-		<form method="POST">
+		<form method="POST" class="product-form">
 			<input type="submit" value="Lägg till i varukorg" />
 		</form>
 	</div>

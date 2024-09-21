@@ -18,7 +18,7 @@ get_header(); ?>
 		endif;
 		?>
 			<?php
-				if($_SERVER['REQUEST_METHOD'] === 'POST') {
+				if ($_SERVER['REQUEST_METHOD'] === 'POST') {         
 
 					$new_id = wp_insert_post(array(
                         'post_type' => 'collection',
