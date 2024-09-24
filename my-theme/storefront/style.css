@@ -37,8 +37,14 @@ body {
 .logo a {
     text-decoration: none;
     font-size: 24px;
-    font-weight: bold;
+    font-family: "Dancing Script", cursive;
+    font-optical-sizing: auto;
+    font-weight: 700;
     color: white;
+}
+.logo a img {
+    max-width: 150px;
+    height: auto;
 }
 /* Navigation Styling */
 .menu-toggle {
@@ -93,7 +99,7 @@ body {
     background: transparent;
     padding: 10px;
 }
-.search-submit {
+.header-search button {
     border-color: rgb(23, 77, 255);
     outline: none;
     padding: 16px 30px;
@@ -185,19 +191,20 @@ select, input[type="date"], button {
     flex-direction: row;
 }
 .archive-container {
-    align-items: center;
+    text-align: center;
     margin: 20px;
     padding: 20px;
+    background-color: #337ab7;
 }
-.archive-container span {
-    color: black;
+.archive-container a {
+    text-decoration: none;
 }
-.archive-container p {
-    color: black;
-}
-.archive-container h1 a {
+.archive-container a span {
     color: black;
     text-decoration: none;
+}
+.archive-container a p {
+    color: black;
 }
 .archive p {
     color: black;

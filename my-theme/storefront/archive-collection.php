@@ -36,11 +36,13 @@ get_header();
 				the_post();
 				?>
 				<div class="archive-container">
-				<span>Skapad: <?php echo get_the_date(); ?></span>
-					<h1>
-						<a href="<?php echo esc_url(get_the_permalink()); ?>"><?php the_title(); ?></a>
-					</h1>
-					<?php the_excerpt();?>						
+					<a href="<?php echo esc_url(get_the_permalink()); ?>">
+						<h1>
+							<?php the_title(); ?>
+						</h1>
+						<span>Skapad: <?php echo get_the_date(); ?></span>
+						<?php the_excerpt();?>						
+					</a>
 				</div>
 				<?php
 				}
