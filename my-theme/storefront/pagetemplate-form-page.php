@@ -32,8 +32,7 @@ get_header(); ?>
                     ?>
                     <?php
                     update_post_meta($new_id, 'products', $products);
-                    ?>
-                    
+                    ?>                    
                     <a href="<?php echo(get_permalink($new_id)); ?>">
                         Visa din kollektion
                     </a>
@@ -42,8 +41,5 @@ get_header(); ?>
 			?>
 			<?php do_action('form_on_page_template'); ?>
 			<?php do_action('after_form_on_page_template'); ?>
-            <div>
-			    <a href="<?php echo(home_url("/fardiga-mixar/")); ?>">Se färdiga kollektioner</a>
-		    </div>
         <?php
 get_footer();

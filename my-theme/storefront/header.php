@@ -31,9 +31,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 <?php the_custom_logo(); ?>
             <?php else : ?>
                 <a href="<?php echo esc_url(home_url('/')); ?>"><?php bloginfo('name'); ?></a>
-                <!-- <a href="<?php echo esc_url(home_url('/')); ?>">
-                    <img src="<?php echo get_template_directory_uri(); ?>/logo/Logo_converted.jpeg" alt="<?php bloginfo('name'); ?>" />
-                </a> -->
             <?php endif; ?>
         </div>
 

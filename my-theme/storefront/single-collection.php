@@ -13,25 +13,22 @@ get_header(); ?>
 			the_post();?>
 			<h2><?php the_title();?></h2>
 			<?php the_content();
-
+			
 		endwhile; 
 
 		
 		if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 			
-			// Hämta och lägg till produkter i kundvagnen
 			$product_ids = get_post_meta(get_the_ID(), 'products', true);
 			foreach($product_ids as $product_id) {
 				WC()->cart->add_to_cart($product_id, 1, 0, array(), array('collection' => get_the_ID()));
 			}
 		}
 		
-		// Hämta produkter
 		$products_ids = get_post_meta(get_the_ID(), 'products', true);
 		
 		?>
 		<?php
-		// Loopa genom produkterna och skriv ut dem
 		foreach ($products_ids as $product_id) {
 			$product = wc_get_product($product_id);
 			?>
@@ -41,7 +38,9 @@ get_header(); ?>
 				</a>
 			</p>
 			<?php
+			
 		}
+		
 		?>
 		</div>
 		<form method="POST" class="product-form">
